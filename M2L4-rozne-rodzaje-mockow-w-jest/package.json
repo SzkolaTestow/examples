@@ -1,0 +1,15 @@
+{
+  "name": "M2L4-rozne-rodzaje-mockow-w-jest",
+  "version": "1.0.0",
+  "description": "Przykłady wykorzystania róznych rodzajów mocków w Jest",
+  "main": "mocks.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Anna Konopka (kernelgonnapanic)",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.0.4"
+  }
+}

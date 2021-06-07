@@ -1,0 +1,15 @@
+{
+  "name": "M2L3-testowanie-asynchronicznosci",
+  "version": "1.0.0",
+  "description": "Przykłady testowania asynchroniczności w Jest",
+  "main": "async.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Anna Konopka (kernelgonnapanic)",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.0.4"
+  }
+}
