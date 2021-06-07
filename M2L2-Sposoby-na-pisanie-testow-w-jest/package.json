@@ -1,0 +1,15 @@
+{
+  "name": "m2l2-sposoby-na-pisanie-testow-w-jest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "pSiemieniuk",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.0.4"
+  }
+}
