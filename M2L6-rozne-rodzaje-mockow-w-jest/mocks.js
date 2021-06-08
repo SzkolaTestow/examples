@@ -1,10 +1,10 @@
-// jest.fn()
-// toHaveBeenCalled, toHaveBeenCalledWith
-// .mock - properties
-// mockowanie całych modułów - jest.mock('axios')
+const fetchBooks = () => {
+  return fetch("/books", { method: "GET" });
+};
 
-// describe('getData', () => {
-//   it('fetches data if they are not cached', () => {
+const getFormattedBookInfo = async (id, formatter) => {
+  const books = await fetchBooks();
+  return books[id] ? formatter(books[id]) : null;
+};
 
-//   });
-// })
+module.exports = { getFormattedBookInfo };
