@@ -1,12 +1,12 @@
 const { getFormattedBookInfo } = require("./mocks");
 
 describe("getFormattedBookInfo", () => {
-  it("properly envokes callback with a book object", () => {
-    const myMockFunction = jest.fn();
-    getFormattedBookInfo(1, myMockFunction);
+  it("properly envokes formatter with a book object", () => {
+    const mockFormatter = jest.fn();
+    getFormattedBookInfo(1, mockFormatter);
 
-    expect(myMockFunction).toHaveBeenCalled();
-    expect(myMockFunction).toHaveBeenCalledWith({
+    expect(mockFormatter).toHaveBeenCalled();
+    expect(mockFormatter).toHaveBeenCalledWith({
       id: 2,
       title: "Kierunek jakość. Jak unikać błędów w projekcie",
       author: "Aleksandra Kunysz",
@@ -14,17 +14,19 @@ describe("getFormattedBookInfo", () => {
   });
 
   it("uses formatter to return properly formatted information about a book", () => {
-    const myMockFunction = jest.fn(
-      (book) => `This is "${book.title}" written by ${book.author}`
-    );
-    const bookInfo = getFormattedBookInfo(0, myMockFunction);
+    const mockFormatter = jest.fn((book) => {
+      return `This is "${book.title}" written by ${book.author}`;
+    });
+
+    const bookInfo = getFormattedBookInfo(0, mockFormatter);
     expect(bookInfo).toBe('This is "Radical Candor" written by Kim Scott');
   });
 
   it("returns null when book is not found", () => {
-    const mock = jest.fn();
-    const bookInfo = getFormattedBookInfo(99, mock);
+    const mockFormatter = jest.fn();
+    const bookInfo = getFormattedBookInfo(99, mockFormatter);
+
     expect(bookInfo).toBe(null);
-    expect(mock).not.toHaveBeenCalled();
+    expect(mockFormatter).not.toHaveBeenCalled();
   });
 });
