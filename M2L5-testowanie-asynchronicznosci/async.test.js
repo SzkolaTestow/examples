@@ -1,35 +1,36 @@
 const { getUser, getUserForId } = require("./async");
 
 describe("getUser", () => {
-  it("returns proper data", (done) => {
-    getUser((data) => {
-      // expect(data).toEqual({ name: "Jon Snow", city: "Castle Black" });
-      expect(data).toEqual(expect.objectContaining({ name: "Jon Snow" }));
+  it("return props data", (done) => {
+    getUser((user) => {
+      expect(user).toEqual(expect.objectContaining({ name: "Jon Snow" }));
       done();
     });
   });
 });
 
-describe("getDataPromise", () => {
+describe("getUserForId", () => {
   it("returns proper data for the specified id", () => {
-    return getUserForId(1).then((data) =>
-      expect(data).toEqual({ id: 1, name: "Jon Snow", city: "Castle Black" })
-    );
+    return getUserForId(1).then((user) => {
+      expect(user).toEqual(
+        expect.objectContaining({ id: 1, name: "Jon Snow" })
+      );
+    });
   });
 
   it("promise is rejected when the user is not found", () => {
     expect.assertions(1);
 
-    return getUserForId(99).catch((error) =>
-      expect(error).toBe("No user found for id: 99")
-    );
+    return getUserForId(99).catch((error) => {
+      expect(error).toBe("No user found for id: 99");
+    });
   });
 });
 
-describe("getDataAsync", () => {
+describe("getUserForId - async/await", () => {
   it("returns proper data for the specified id", async () => {
     const user = await getUserForId(1);
-    expect(user).toEqual({ id: 1, name: "Jon Snow", city: "Castle Black" });
+    expect(user).toEqual(expect.objectContaining({ id: 1, name: "Jon Snow" }));
   });
 
   it("promise is rejected when the user is not found", async () => {
