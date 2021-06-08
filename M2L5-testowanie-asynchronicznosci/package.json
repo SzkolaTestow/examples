@@ -1,5 +1,5 @@
 {
-  "name": "M2L3-testowanie-asynchronicznosci",
+  "name": "M2L5-testowanie-asynchronicznosci",
   "version": "1.0.0",
   "description": "Przykłady testowania asynchroniczności w Jest",
   "main": "async.js",

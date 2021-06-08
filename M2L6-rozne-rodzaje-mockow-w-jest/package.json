@@ -1,5 +1,5 @@
 {
-  "name": "M2L4-rozne-rodzaje-mockow-w-jest",
+  "name": "M2L6-rozne-rodzaje-mockow-w-jest",
   "version": "1.0.0",
   "description": "Przykłady wykorzystania róznych rodzajów mocków w Jest",
   "main": "mocks.js",
